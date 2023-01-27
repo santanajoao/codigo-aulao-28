@@ -1,0 +1,84 @@
+.Form {
+  background-color: rgb(160, 160, 160);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  height: fit-content;
+  padding: 0 25px;
+  width: 65vw;
+  height: 80vh;
+  justify-content: center;
+}
+
+.row {
+  align-items: center;
+  display: flex;
+  gap: 20px;
+}
+
+.input-label {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+  font-weight: 600;
+  gap: 5px;
+}
+
+#plan-input {
+  background-color: #fff;
+  border: none;
+  height: 36px;
+  border-bottom: 2px solid goldenrod;
+}
+
+#notes-input {
+  border: none;
+  height: 65px;
+  padding: 10px;
+  width: 100%;
+  border-bottom: 2px solid goldenrod;
+
+}
+
+.personal-input-label {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  font-size: 15px;
+  font-weight: 600;
+  gap: 5px;
+  justify-content: flex-start;
+}
+
+#personal-input {
+  border: none;
+  height: 16px;
+  width: 16px;
+  border-bottom: 2px solid goldenrod;
+
+}
+
+.register-btn {
+  background-color: goldenrod;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  flex-grow: 1;
+  font-size: 14px;
+  font-weight: 700;
+  height: 36px;
+}
+
+.register-btn:disabled {
+  cursor: not-allowed;
+  opacity: 40%;
+}
+
+.valid {
+  outline: 2px solid lightgreen;
+}
+
+.invalid {
+  outline: 2px solid lightcoral;
+}

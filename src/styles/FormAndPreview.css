@@ -1,0 +1,11 @@
+.FormAndPreview {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.FormAndPreview__container {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+}

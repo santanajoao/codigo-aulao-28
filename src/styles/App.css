@@ -1,0 +1,14 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  text-align: center;
+  background-color: rgb(60, 60, 60);
+}
+
+.form-and-preview-title {
+  color: white;
+}

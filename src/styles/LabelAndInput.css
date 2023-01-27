@@ -1,0 +1,17 @@
+.LabelAndInput__label {
+  align-items: flex-start;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  font-weight: 600;
+  gap: 5px;
+  font-size: 15px;
+}
+
+.LabelAndInput__input {
+  height: 36px;
+  width: 100%;
+  padding: 0 10px;
+  border: none;
+  border-bottom: 2px solid goldenrod;
+}

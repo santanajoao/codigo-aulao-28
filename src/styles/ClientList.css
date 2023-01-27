@@ -1,0 +1,18 @@
+.ClientList {
+  padding-top: 30px;
+}
+
+.ClientList__list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-top: 45px;
+}
+
+.ClientList__list > .Preview {
+  margin: 10px;
+}
+
+.ClientList > h2 {
+  margin: 40px;
+}
