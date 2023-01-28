@@ -6,7 +6,7 @@
 - Desmarque o checkbox ```copy the main branch only``` para clonar a branch ```gabarito``` também
 - Clone **Seu fork**
 - Execute o ```npm install``` **NAS DUAS BRANCHS** (contém dependências diferentes, como o linter da trybe)
-- Execute ```npm run``` para rodar o projeto
+- Execute ```npm start``` para rodar o projeto
 
 # Branch main
 - Contém o código desenvolvido durante a aula
