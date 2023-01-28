@@ -1,5 +1,5 @@
 {
-  "name": "aula-28",
+  "name": "turma-28-user-registration",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -34,5 +34,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^8.32.0",
+    "eslint-config-trybe-frontend": "^1.6.0",
+    "eslint-plugin-react": "^7.32.1",
+    "stylelint": "^14.10.0",
+    "stylelint-config-standard": "^27.0.0",
+    "stylelint-order": "5.0.0"
   }
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Title from './Title';
 import Form from './Form';
 import Preview from './Preview';
@@ -6,15 +7,25 @@ import '../styles/FormAndPreview.css';
 
 export default class FormAndPreview extends Component {
   render() {
-    const { onChange, appState, onClick } = this.props;
+    const { onSubmit, handleChange, state } = this.props;
     return (
-      <div className="FormAndPreview">
+      <section className="FormAndPreview">
         <Title>Cadastro Trybe Fit</Title>
         <div className="FormAndPreview__container">
-          <Form onChange={onChange} {...appState} onClick={onClick}/>
-          <Preview {...appState} />
+          <Form
+            onSubmit={ onSubmit }
+            onChange={ handleChange }
+            parentState={ state }
+          />
+          <Preview clientInfos={ state } />
         </div>
-      </div>
+      </section>
     );
   }
 }
+
+FormAndPreview.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  state: PropTypes.shape({}).isRequired,
+};

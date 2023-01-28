@@ -1,55 +1,58 @@
 import React, { Component } from 'react';
-import FormAndPreview from './components/FormAndPreview';
 import ClientList from './components/ClientList';
+import FormAndPreview from './components/FormAndPreview';
 import './styles/App.css';
+
+const INITIAL_STATE = {
+  name: '',
+  age: '',
+  photo: '',
+  phone: '',
+  plan: '2x na semana',
+  notes: '',
+  personal: false,
+};
 
 export default class App extends Component {
   state = {
-    name: '',
-    photo: '',
-    personal: false,
-    plan: '2x na semana',
-    clients: [],
-    isBtnDisabled: true,
+    ...INITIAL_STATE,
+    clientList: [],
   };
 
-  validateFields = () => {
-    this.setState((state) => {
-      const { name, photo } = state;
-      const isNameValid = /\w \w/.test(name);
-      const isPhotoValid = photo.length !== 0;
-
-      return {
-        isBtnDisabled: !(isNameValid && isPhotoValid),
-      };
-    });
-  }
-
-  handleChange = ({ target }) => {
+  handleInputChange = ({ target }) => {
     const { name, type } = target;
+    const newValue = (type === 'checkbox' ? target.checked : target.value);
     this.setState({
-      [name]: type === 'checkbox' ? target.checked : target.value,
-    }, this.validateFields);
+      [name]: newValue,
+    });
   };
 
-  handleClick = () => {
-    this.setState((state) => {
-      const { name, photo, personal, plan, clients } = state;
-      const client = { name, photo, personal, plan };
-      return { clients: [...clients, client] };
-    });
+  handleSubmit = (event) => {
+    event.preventDefault();
+
+    this.setState((prevState) => {
+      const {
+        name, age, photo, phone, plan, notes, personal, clientList,
+      } = prevState;
+
+      const newClient = { name, age, photo, phone, plan, notes, personal };
+
+      return { clientList: [...clientList, newClient] };
+    }, () => this.setState({ ...INITIAL_STATE }));
   };
 
   render() {
-    const { clients } = this.state;
+    const { clientList } = this.state;
     return (
       <div className="App">
         <FormAndPreview
-          appState={ this.state }
-          onChange={this.handleChange}
-          onClick={this.handleClick}
+          onSubmit={ this.handleSubmit }
+          handleChange={ this.handleInputChange }
+          state={ this.state }
         />
-        <ClientList clients={clients} />
+        <ClientList
+          clientList={ clientList }
+        />
       </div>
     );
   }

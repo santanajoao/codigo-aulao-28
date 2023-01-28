@@ -1,26 +1,31 @@
 import React, { Component } from 'react';
-import Title from './Title';
+import PropTypes from 'prop-types';
 import Preview from './Preview';
+import Title from './Title';
 import '../styles/ClientList.css';
 
 export default class ClientList extends Component {
   render() {
-    const { clients } = this.props;
+    const { clientList } = this.props;
     return (
-      <div className="ClientList">
+      <section className="ClientList">
         <Title>Clientes Cadastrados</Title>
-        { clients.length === 0 ? (
+        { clientList.length === 0 ? (
           <h2>Você ainda não cadastrou nenhum cliente</h2>
         ) : (
           <ul className="ClientList__list">
-            { clients.map((client) => (
-              <li>
-                <Preview {...client} />
-              </li>
+            { clientList.map((clientInfos, index) => (
+              <Preview key={ index } clientInfos={ clientInfos } />
             )) }
           </ul>
         ) }
-      </div>
+      </section>
     );
   }
 }
+
+ClientList.propTypes = {
+  clientList: PropTypes.arrayOf(
+    PropTypes.shape({}),
+  ).isRequired,
+};

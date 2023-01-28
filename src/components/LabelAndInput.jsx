@@ -1,23 +1,30 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import '../styles/LabelAndInput.css';
 
 export default class LabelAndInput extends Component {
   render() {
-    const {
-      labelText, identifier, type, value, onChange, checked,
-    } = this.props;
+    const { identifier, labelText, onChange, type, value } = this.props;
     return (
-      <label htmlFor={`${identifier}-input`}>
+      <label htmlFor={ `${identifier}-input` } className="LabelAndInput__label">
         {labelText}
         <input
-          checked={checked}
-          value={value}
-          type={type}
-          id={`${identifier}-input`}
-          onChange={onChange}
-          name={identifier}
+          value={ value }
+          type={ type }
+          onChange={ onChange }
+          name={ identifier }
+          id={ `${identifier}-input` }
+          className="LabelAndInput__input"
         />
       </label>
     );
   }
 }
+
+LabelAndInput.propTypes = {
+  identifier: PropTypes.string.isRequired,
+  labelText: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  type: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+};
