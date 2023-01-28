@@ -1,5 +1,6 @@
 .Form {
-  background-color: rgb(160, 160, 160);
+  border-radius: 3px;
+  background-color: white;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -8,6 +9,8 @@
   width: 65vw;
   height: 80vh;
   justify-content: center;
+  border: 1px solid black;
+  box-shadow: 0px 4px 8px rgb(0, 0, 0, 0.3);
 }
 
 .row {
@@ -29,7 +32,7 @@
   background-color: #fff;
   border: none;
   height: 36px;
-  border-bottom: 2px solid goldenrod;
+  border-bottom: 2px solid #1EB720;
 }
 
 #notes-input {
@@ -37,7 +40,7 @@
   height: 65px;
   padding: 10px;
   width: 100%;
-  border-bottom: 2px solid goldenrod;
+  border-bottom: 2px solid #1EB720;
 
 }
 
@@ -55,12 +58,10 @@
   border: none;
   height: 16px;
   width: 16px;
-  border-bottom: 2px solid goldenrod;
-
 }
 
 .register-btn {
-  background-color: goldenrod;
+  background-color: #1EB720;
   border: none;
   color: #fff;
   cursor: pointer;
@@ -75,10 +76,7 @@
   opacity: 40%;
 }
 
-.valid {
-  outline: 2px solid lightgreen;
-}
-
-.invalid {
-  outline: 2px solid lightcoral;
+#notes-input:focus,
+#plan-input:focus {
+  outline: 2px solid black;
 }
